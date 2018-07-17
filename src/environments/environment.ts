@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:8080/percentiles/service'
+  baseUrl: 'https://percentile-service.herokuapp.com/percentiles/service'
 };
