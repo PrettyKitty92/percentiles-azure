@@ -1,0 +1,32 @@
+{
+  "/users/*": {
+    "target": "https://percentile-service.herokuapp.com/percentiles/service",
+    "secure": true,
+    "logLevel": "debug"
+  },
+  "/admin/*": {
+    "target": "https://percentile-service.herokuapp.com/percentiles/service",
+    "secure": true,
+    "logLevel": "debug"
+  },
+  "/samples/*": {
+    "target": "https://percentile-service.herokuapp.com/percentiles/service",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/percentiles/*": {
+    "target": "https://percentile-service.herokuapp.com/percentiles/service",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/sign-up":{
+    "target": "https://percentile-service.herokuapp.com/percentiles/service",
+    "secure": false,
+    "logLevel":"debug"
+  },
+  "/login":{
+    "target": "https://percentile-service.herokuapp.com/percentiles/service",
+    "secure": false,
+    "logLevel":"debug"
+  }
+}
