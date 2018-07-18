@@ -34,7 +34,7 @@ export class AlertService {
   }
 
   error(message: string, keepAfterRouteChange = false) {
-    console.log('ERROR !!!!!!!!!|');
+    console.log(message);
     if (message === 'BAD_MEASUREMENT_PARAMETERS') {
       message = 'Niepoprawne parametry zapytania';
     }
