@@ -16,9 +16,9 @@ export class CalculatorService {
   }
 
   getPercentile(measurementDetail: MeasurementDetail): Promise<ValuePerPercentile> {
-    let url = this.baseUrl +`percentiles/${measurementDetail.measurementType}/${measurementDetail.childSex}`;
+    let url = this.baseUrl +`/percentiles/${measurementDetail.measurementType}/${measurementDetail.childSex}`;
     if (measurementDetail.measurementType === 'WEIGHT_FOR_LENGTH' || measurementDetail.measurementType === 'WEIGHT_FOR_HEIGHT') {
-      url = this.baseUrl +`percentiles/WEIGHT_FOR_LENGTH_HEIGHT/${measurementDetail.childSex}`;
+      url = this.baseUrl +`/percentiles/WEIGHT_FOR_LENGTH_HEIGHT/${measurementDetail.childSex}`;
     }
     const params = new URLSearchParams();
     params.set('unitTypeForParameterX', UnitType[measurementDetail.parameterX.unitType.toString()]);
@@ -32,7 +32,7 @@ export class CalculatorService {
   }
 
   calculateAndSaveMeasurement(measurementDetail: MeasurementDetail, babyName: string, save: boolean, days: number): Promise<ValuePerPercentile> {
-    const url = this.baseUrl +`users/user/babies/baby/${babyName}/${measurementDetail.measurementType}`;
+    const url = this.baseUrl +`/users/user/babies/baby/${babyName}/${measurementDetail.measurementType}`;
     return this.http.get(url, this.getOptions(measurementDetail, save, days))
       .toPromise()
       .then(response => response.json() as ValuePerPercentile)
